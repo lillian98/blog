@@ -1,11 +1,13 @@
 ---
-layout:default
-title:lillian's home
+layout: default
+titile: 我们做过的页面
 ---
-<h2>{{page.title}}</h2>
-<p>the newest</p>
-<ul>
-    {% for post in site.posts %}
-    <li>{{ post.date | date_to_string}}<a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></li>
-    {% endfor %}
-</ul>
+<section role="banner">
+    <img src="img/logo-2x.png" />
+</section>
+
+<section class="content">
+    <p>
+        Welcome to John Doe Photography! Please, check out my <a href="{{site.baseurl}}/portfolio/">Portfolio</a> to see my work.
+    </p>
+</section>

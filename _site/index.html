@@ -4,7 +4,7 @@
 <head>
     <meta charset=utf-8 />
     <title>
-        {% if page.title %} {{ page.title }} | {% endif %} John Doe, Photographer
+         John Doe, Photographer
     </title>
     <link rel="stylesheet" href="/blog/css/styles.css" />
 </head>
@@ -19,20 +19,28 @@
             <nav role="navigation">
                 <ul>
                     <li>
-                        <a href="{{site.baseurl}}/"> Home </a>
+                        <a href="/blog/"> Home </a>
                     </li>
                     <li>
-                        <a href="{{site.baseurl}}/portfolio/"> Portfolio </a>
+                        <a href="/blog/portfolio/"> Portfolio </a>
                     </li>
                     <li>
-                        <a href="{{site.baseurl}}/about"> About </a>
+                        <a href="/blog/about"> About </a>
                     </li>
                     <li>
-                        <a href="{{site.baseurl}}/contact"> Contact </a>
+                        <a href="/blog/contact"> Contact </a>
                     </li>
                 </ul>
             </nav>
-            {{ content }}
+            <section role="banner">
+    <img src="img/logo-2x.png" />
+</section>
+
+<section class="content">
+    <p>
+        Welcome to John Doe Photography! Please, check out my <a href="/blog/portfolio/">Portfolio</a> to see my work.
+    </p>
+</section>
             <footer>
                 <p>
                     @copy; X Element Photography 2014 | All Rights Reserved.
