@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://lillian98.github.io/blog/feed.xml" />
 <link rel="alternate" type="text/html" href="http://lillian98.github.io/blog" />
-<updated>2014-08-03T11:40:32-04:00</updated>
+<updated>2014-08-03T11:57:24-04:00</updated>
 <id>http://lillian98.github.io/blog/</id>
 <author>
   <name>Lillian</name>
@@ -26,7 +26,7 @@
   </author>
   <content type="html">&lt;h2 id=&quot;canvas&quot;&gt;canvas的雪花飘动&lt;/h2&gt;
 &lt;figure&gt;
-    &lt;a href=&quot;http://www.wanggou.com/promote/2013/nianhuo_lingshi.shtml&quot;&gt;&lt;img src=&quot;/img/nianhuo.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;http://www.wanggou.com/promote/2013/nianhuo_lingshi.shtml&quot;&gt;&lt;img src=&quot;http://lillian98.github.io/blog/img/nianhuo.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
     &lt;figcaption&gt;&lt;a href=&quot;http://www.wanggou.com/promote/2013/nianhuo_lingshi.shtml&quot; title=&quot;动画、还是动画,CSS3 JS FLASH巧妙结合，使得这个冬天不太冷&quot;&gt;动画、还是动画,CSS3 JS FLASH巧妙结合，使得这个冬天不太冷&lt;/a&gt;.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -48,7 +48,7 @@
   </author>
   <content type="html">&lt;h2 id=&quot;flash&quot;&gt;Flash的结合&lt;/h2&gt;
 &lt;figure&gt;
-    &lt;a href=&quot;http://1020.wanggou.com/strategy.shtml&quot;&gt;&lt;img src=&quot;/img/fengqiangjie.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;http://1020.wanggou.com/strategy.shtml&quot;&gt;&lt;img src=&quot;http://lillian98.github.io/blog/img/fengqiangjie.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
     &lt;figcaption&gt;&lt;a href=&quot;http://1020.wanggou.com/strategy.shtml&quot; title=&quot;疯抢节上的flash动画已经不在满足于动，而是需要‘恰到时机’的动&quot;&gt;疯抢节上的flash动画已经不在满足于动，而是需要‘恰到时机’的动&lt;/a&gt;.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -70,7 +70,7 @@
   </author>
   <content type="html">&lt;h2 id=&quot;css3&quot;&gt;CSS3在导航的魅力&lt;/h2&gt;
 &lt;figure&gt;
-    &lt;a href=&quot;http://www.wanggou.com/promote/2013/clearance_main.shtml&quot;&gt;&lt;img src=&quot;/img/clearance.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;http://www.wanggou.com/promote/2013/clearance_main.shtml&quot;&gt;&lt;img src=&quot;http://lillian98.github.io/blog/img/clearance.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
     &lt;figcaption&gt;&lt;a href=&quot;http://www.wanggou.com/promote/2013/clearance_main.shtml&quot; title=&quot;清仓活动中floating的旋转箭头也为右侧的浮层注入了许多活力&quot;&gt;清仓活动中floating的旋转箭头也为右侧的浮层注入了许多活力&lt;/a&gt;.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -92,7 +92,7 @@
   </author>
   <content type="html">&lt;h2 id=&quot;jquery&quot;&gt;JQuery动画&lt;/h2&gt;
 &lt;figure&gt;
-    &lt;a href=&quot;http://www.wanggou.com/promote/2013/xiyou.shtml&quot;&gt;&lt;img src=&quot;/img/xiyouji.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;http://www.wanggou.com/promote/2013/xiyou.shtml&quot;&gt;&lt;img src=&quot;http://lillian98.github.io/blog/img/xiyouji.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
     &lt;figcaption&gt;&lt;a href=&quot;http://www.wanggou.com/promote/2013/xiyou.shtml&quot; title=&quot;2013年JQuery Animate来袭.这次,它做为按钮动画,为嬉游路上赋予了生命&quot;&gt;2013年JQuery Animate来袭.这次,它做为按钮动画,为嬉游路上赋予了生命&lt;/a&gt;.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
