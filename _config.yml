@@ -35,7 +35,7 @@ bing_verify:
 # For external links add external: true
 links:
   - title: Theme Setup
-    url: /theme-setup
+    url: http://mmistakes.github.io/hpstr-jekyll-theme/theme-setup/
   - title: External Link
     url: http://mademistakes.com
     external: true
