@@ -4,13 +4,138 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://lillian98.github.io/blog/feed.xml" />
 <link rel="alternate" type="text/html" href="http://lillian98.github.io/blog" />
-<updated>2014-08-05T03:46:37-04:00</updated>
+<updated>2014-08-21T20:44:07-04:00</updated>
 <id>http://lillian98.github.io/blog/</id>
 <author>
   <name>Lillian</name>
   <uri>http://lillian98.github.io/blog/</uri>
   <email>wangli8698@163.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[jekyll博客]]></title>
+ <link rel="alternate" type="text/html" href="http://lillian98.github.io/blog/2014/08/20/jekyll.html" />
+  <id>http://lillian98.github.io/blog/2014/08/20/jekyll</id>
+  <published>2014-08-20T00:00:00-04:00</published>
+  <updated>2014-08-20T00:00:00-04:00</updated>
+  <author>
+    <name>Lillian</name>
+    <uri>http://lillian98.github.io/blog</uri>
+    <email>wangli8698@163.com</email>
+  </author>
+  <content type="html">&lt;h2 id=&quot;githubjekyll&quot;&gt;从零开始在github搭建jekyll博客&lt;/h2&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;环境准备&lt;/h3&gt;
+
+&lt;h4 id=&quot;gitgithub&quot;&gt;安装git,github客户端&lt;/h4&gt;
+
+&lt;p&gt;Mac系统下载git客户端&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;git安装&lt;/li&gt;
+  &lt;li&gt;客户端：github或sourcetree&lt;/li&gt;
+  &lt;li&gt;ssh：
+    &amp;gt;&lt;a href=&quot;http://blog.163.com/xianfuying@126/blog/static/21960005201181482518631/&quot; title=&quot;github入门&quot;&gt;ssh&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;rubygems&quot;&gt;安装ruby，gems&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;建议使用brew安装ruby&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;$ brew install ruby&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;检查安装是否成功（版本要求1.9.1以上）：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;$ ruby -v&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装RubyGems&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;a href=&quot;http://rubygems.org/pages/download&quot; title=&quot;RubyGems&quot;&gt;RubyGems&lt;/a&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;升级、检查Gem版本&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;可能需要根权限                   
+$ gem update --system                    
+检查当前版本，输出 2.0.6             
+$ gem -v&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;jekyll&quot;&gt;安装jekyll&lt;/h4&gt;
+&lt;p&gt;1.安装命令&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;##可能需要根权限      
+$ gem install jekyll&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;2.检查版本&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;##安装完了之后，查看版本号，现在打印出来的是 jekyll 2.2.0
+$ jekyll -v&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;3.检查是否安装了rdiscount&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;$gem list --local&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;目前版本为rdiscount (2.1.7.1)，如果没有安装，安装：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;##和 Jekyll 一样使用 gem 来安装，需要根权限
+$ gem install rdiscount&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;4.遇到的问题   &lt;br /&gt;
+install之后提示连接服务器失败，找不到文件。其实是因为被墙了。。   &lt;br /&gt;
+淘宝有个gems镜像但有的dns服务器有问题，建议直接更改为gems镜像的IP地址。具体如下：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;$ gem sources -l    //列出当前gems下载的服务器地址，默认为https://rubygems.org/
+$ gem sources --remove https://rubygems.org/    //移除rubygems
+$ gem sources -a http://110.75.120.11/          //增加淘宝镜像&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;jekyll-1&quot;&gt;jekyll目录结构&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;├── _config.yml 存储配置数据。很多全局的配置或者指令写在这里。         
+    ├── _layouts    布局           
+    │   ├── default.html               
+    │   └── post.html         
+    ├── _posts  存放写文章，格式化为：YEAR-MONTH-DAY-title.md                   
+    │   └── 2013-08-07-welcome-to-jekyll.markdown        
+    ├── css       
+    │   ├── main.css      
+    │   └── syntax.css        
+    └── index.html&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;jekyll-2&quot;&gt;jekyll配置文件&lt;/h3&gt;
+&lt;p&gt;常用的配置名：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;url: http://lillian98.github.io/blog
+exclude: [portfolio]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;如何用：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;site.url&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;参考实例&lt;/p&gt;
+
+&lt;h3 id=&quot;jekyll-3&quot;&gt;jekyll模板&lt;/h3&gt;
+&lt;p&gt;参考实例&lt;/p&gt;
+
+&lt;h3 id=&quot;jekyll-post&quot;&gt;jekyll post文件&lt;/h3&gt;
+&lt;p&gt;参考实例&lt;/p&gt;
+
+&lt;h3 id=&quot;markdown&quot;&gt;markdown语法&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.163.com/xianfuying@126/blog/static/21960005201181482518631/&quot; title=&quot;github入门&quot;&gt;markdown语法&lt;/a&gt;&lt;/p&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://lillian98.github.io/blog/2014/08/20/jekyll.html&quot;&gt;jekyll博客&lt;/a&gt; was originally published by Lillian at &lt;a href=&quot;http://lillian98.github.io/blog&quot;&gt;Element&lt;/a&gt; on August 20, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -68,9 +193,9 @@
     <uri>http://lillian98.github.io/blog</uri>
     <email>wangli8698@163.com</email>
   </author>
-  <content type="html">&lt;h2 id=&quot;css3&quot;&gt;CSS3的第一次尝试&lt;/h2&gt;
+  <content type="html">&lt;h2 id=&quot;section&quot;&gt;国庆出游装备&lt;/h2&gt;
 &lt;figure&gt;
-    &lt;a href=&quot;http://www.wanggou.com/sports/promote/2013/national_day.shtml&quot;&gt;&lt;img src=&quot;http://lillian98.github.io/blog/img/ggcy.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;http://www.wanggou.com/sports/promote/2013/national_day.shtml&quot;&gt;&lt;img src=&quot;http://lillian98.github.io/blog/img/gqcy.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
     &lt;figcaption&gt;&lt;a href=&quot;http://www.wanggou.com/sports/promote/2013/national_day.shtml&quot; title=&quot;动感横屏切换，标签淡入淡出，带着炫酷穿梭于不同的城市之间&quot;&gt;动感横屏切换，标签淡入淡出，带着炫酷穿梭于不同的城市之间&lt;/a&gt;.&lt;/figcaption&gt;
 &lt;/figure&gt;
 

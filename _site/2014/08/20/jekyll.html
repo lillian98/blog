@@ -5,25 +5,25 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>我的旅行日记 &#8211; Element</title>
-<meta name="description" content="当然，如果能给用户足够的对生活的模拟，显然会更有意思一些">
-<meta name="keywords" content="slider">
+<title>jekyll博客 &#8211; Element</title>
+<meta name="description" content="github，gh-pages, jekyll搭建博客">
+<meta name="keywords" content="github, jekyll">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的旅行日记">
-<meta property="og:description" content="当然，如果能给用户足够的对生活的模拟，显然会更有意思一些">
-<meta property="og:url" content="http://lillian98.github.io/blog/2013/04/16/wdlxrj.html">
+<meta property="og:title" content="jekyll博客">
+<meta property="og:description" content="github，gh-pages, jekyll搭建博客">
+<meta property="og:url" content="http://lillian98.github.io/blog/2014/08/20/jekyll.html">
 <meta property="og:site_name" content="Element">
 
 
 
 
 
-<link rel="canonical" href="http://lillian98.github.io/blog/2013/04/16/wdlxrj.html">
+<link rel="canonical" href="http://lillian98.github.io/blog/2014/08/20/jekyll.html">
 <link href="http://lillian98.github.io/blog/feed.xml" type="application/atom+xml" rel="alternate" title="Element Feed">
 
 
@@ -109,29 +109,133 @@
     <header class="header-title">
       <div class="header-title-wrap">
         
-          <h1 class="entry-title"><a href="http://lillian98.github.io/blog/2013/04/16/wdlxrj.html" rel="bookmark" title="我的旅行日记">我的旅行日记</a></h1>
+          <h1 class="entry-title"><a href="http://lillian98.github.io/blog/2014/08/20/jekyll.html" rel="bookmark" title="jekyll博客">jekyll博客</a></h1>
         
-        <h2>April 16, 2013</h2>
+        <h2>August 20, 2014</h2>
         
       </div><!-- /.header-title-wrap -->
     </header>
     <div class="entry-content">
-      <h2 id="css3">CSS3的第一次尝试</h2>
-<figure>
-    <a href="http://www.wanggou.com/lady/promote/2013/mytrip.shtml"><img src="http://lillian98.github.io/blog/img/caizuanjie.jpg" alt="" /></a>
-    <figcaption><a href="http://www.wanggou.com/lady/promote/2013/mytrip.shtml" title="当然，如果能给用户足够的对生活的模拟，显然会更有意思一些">当然，如果能给用户足够的对生活的模拟，显然会更有意思一些</a>.</figcaption>
-</figure>
+      <h2 id="githubjekyll">从零开始在github搭建jekyll博客</h2>
+
+<h3 id="section">环境准备</h3>
+
+<h4 id="gitgithub">安装git,github客户端</h4>
+
+<p>Mac系统下载git客户端</p>
+
+<ol>
+  <li>git安装</li>
+  <li>客户端：github或sourcetree</li>
+  <li>ssh：
+    &gt;<a href="http://blog.163.com/xianfuying@126/blog/static/21960005201181482518631/" title="github入门">ssh</a></li>
+</ol>
+
+<h4 id="rubygems">安装ruby，gems</h4>
+
+<ol>
+  <li>建议使用brew安装ruby</li>
+</ol>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">$ brew install ruby</code></pre></div>
+
+<ol>
+  <li>检查安装是否成功（版本要求1.9.1以上）：</li>
+</ol>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">$ ruby -v</code></pre></div>
+
+<ol>
+  <li>
+    <p>安装RubyGems</p>
+
+    <blockquote>
+      <p><a href="http://rubygems.org/pages/download" title="RubyGems">RubyGems</a></p>
+    </blockquote>
+  </li>
+  <li>
+    <p>升级、检查Gem版本</p>
+  </li>
+</ol>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">可能需要根权限                   
+$ gem update --system                    
+检查当前版本，输出 2.0.6             
+$ gem -v</code></pre></div>
+
+<h4 id="jekyll">安装jekyll</h4>
+<p>1.安装命令</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">##可能需要根权限      
+$ gem install jekyll</code></pre></div>
+
+<p>2.检查版本</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">##安装完了之后，查看版本号，现在打印出来的是 jekyll 2.2.0
+$ jekyll -v</code></pre></div>
+
+<p>3.检查是否安装了rdiscount</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">$gem list --local</code></pre></div>
+
+<p>目前版本为rdiscount (2.1.7.1)，如果没有安装，安装：</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">##和 Jekyll 一样使用 gem 来安装，需要根权限
+$ gem install rdiscount</code></pre></div>
+
+<p>4.遇到的问题   <br />
+install之后提示连接服务器失败，找不到文件。其实是因为被墙了。。   <br />
+淘宝有个gems镜像但有的dns服务器有问题，建议直接更改为gems镜像的IP地址。具体如下：</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">$ gem sources -l    //列出当前gems下载的服务器地址，默认为https://rubygems.org/
+$ gem sources --remove https://rubygems.org/    //移除rubygems
+$ gem sources -a http://110.75.120.11/          //增加淘宝镜像</code></pre></div>
+
+<h3 id="jekyll-1">jekyll目录结构</h3>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">├── _config.yml 存储配置数据。很多全局的配置或者指令写在这里。         
+    ├── _layouts    布局           
+    │   ├── default.html               
+    │   └── post.html         
+    ├── _posts  存放写文章，格式化为：YEAR-MONTH-DAY-title.md                   
+    │   └── 2013-08-07-welcome-to-jekyll.markdown        
+    ├── css       
+    │   ├── main.css      
+    │   └── syntax.css        
+    └── index.html</code></pre></div>
+
+<h3 id="jekyll-2">jekyll配置文件</h3>
+<p>常用的配置名：</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">url: http://lillian98.github.io/blog
+exclude: [portfolio]</code></pre></div>
+
+<p>如何用：</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">site.url</code></pre></div>
+
+<p>参考实例</p>
+
+<h3 id="jekyll-3">jekyll模板</h3>
+<p>参考实例</p>
+
+<h3 id="jekyll-post">jekyll post文件</h3>
+<p>参考实例</p>
+
+<h3 id="markdown">markdown语法</h3>
+<p><a href="http://blog.163.com/xianfuying@126/blog/static/21960005201181482518631/" title="github入门">markdown语法</a></p>
+
 
       <footer class="entry-meta">
-        <span class="entry-tags"><a href="http://lillian98.github.io/blog/tags/#slider" title="Pages tagged slider" class="tag">slider</a></span>
-        <span><a href="http://lillian98.github.io/blog/2013/04/16/wdlxrj.html" rel="bookmark" title="我的旅行日记">我的旅行日记</a> was published on <span class="entry-date date published updated"><time datetime="2013-04-16T00:00:00-04:00">April 16, 2013</time></span></span>
+        <span class="entry-tags"><a href="http://lillian98.github.io/blog/tags/#github" title="Pages tagged github" class="tag">github</a><a href="http://lillian98.github.io/blog/tags/#jekyll" title="Pages tagged jekyll" class="tag">jekyll</a></span>
+        <span><a href="http://lillian98.github.io/blog/2014/08/20/jekyll.html" rel="bookmark" title="jekyll博客">jekyll博客</a> was published on <span class="entry-date date published updated"><time datetime="2014-08-20T00:00:00-04:00">August 20, 2014</time></span></span>
         
         <span class="author vcard"><span class="fn"><a href="http://lillian98.github.io/blog/about/" title="About Lillian">Lillian</a></span></span>
         <div class="social-share">
           <ul class="socialcount socialcount-small inline-list">
-            <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://lillian98.github.io/blog/2013/04/16/wdlxrj.html" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
-            <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://lillian98.github.io/blog/2013/04/16/wdlxrj.html" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
-            <li class="googleplus"><a href="https://plus.google.com/share?url=http://lillian98.github.io/blog/2013/04/16/wdlxrj.html" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+            <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://lillian98.github.io/blog/2014/08/20/jekyll.html" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+            <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://lillian98.github.io/blog/2014/08/20/jekyll.html" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+            <li class="googleplus"><a href="https://plus.google.com/share?url=http://lillian98.github.io/blog/2014/08/20/jekyll.html" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
           </ul>
         </div><!-- /.social-share -->
       </footer>
@@ -141,23 +245,23 @@
     <div class="read-more">
       
         <div class="read-more-header">
-          <a href="http://lillian98.github.io/blog/2013/03/04/ctll.html" class="read-more-btn">Read More</a>
+          <a href="http://lillian98.github.io/blog/2014/01/01/nianhuo.html" class="read-more-btn">Read More</a>
         </div><!-- /.read-more-header -->
         <div class="read-more-content">
-          <h3><a href="http://lillian98.github.io/blog/2014/08/20/jekyll.html" title="jekyll博客">jekyll博客</a></h3>
-          <p>github，gh-pages, jekyll搭建博客 <a href="http://lillian98.github.io/blog/2014/08/20/jekyll.html">Continue reading</a></p>
+          <h3><a href="http://lillian98.github.io/blog/2014/01/01/nianhuo.html" title="年货免费送回家">年货免费送回家</a></h3>
+          <p>动画、还是动画,CSS3 JS FLASH巧妙结合，使得这个冬天不太冷 <a href="http://lillian98.github.io/blog/2014/01/01/nianhuo.html">Continue reading</a></p>
         </div><!-- /.read-more-content -->
       
       <div class="read-more-list">
         
           <div class="list-item">
-            <h4><a href="http://lillian98.github.io/blog/2014/01/01/nianhuo.html" title="年货免费送回家">年货免费送回家</a></h4>
-            <span>Published on January 01, 2014</span>
+            <h4><a href="http://lillian98.github.io/blog/2013/10/20/fengqiangjie.html" title="1020疯抢节攻略">1020疯抢节攻略</a></h4>
+            <span>Published on October 20, 2013</span>
           </div><!-- /.list-item -->
         
           <div class="list-item">
-            <h4><a href="http://lillian98.github.io/blog/2013/10/20/fengqiangjie.html" title="1020疯抢节攻略">1020疯抢节攻略</a></h4>
-            <span>Published on October 20, 2013</span>
+            <h4><a href="http://lillian98.github.io/blog/2013/09/23/gqcy.html" title="国庆出游">国庆出游</a></h4>
+            <span>Published on September 23, 2013</span>
           </div><!-- /.list-item -->
         
       </div><!-- /.read-more-list -->
